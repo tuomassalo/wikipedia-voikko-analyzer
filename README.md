@@ -1,7 +1,9 @@
 # wikipedia-voikko-analyzer
 Tools to extract text from Finnish Wikipedia and feed it to Voikko.
 
-This repository includes a script that finds all words that Voikko cannot recognize.
+It uses [WikiExtractor](https://github.com/attardi/wikiextractor) to convert mediawiki format to plaintext. Only the actual text content is analyzed, and *all* templates are ignored.
+
+This repository includes a script, `find-unknowns.py`, that finds all words that Voikko cannot recognize.
 
 ### Prerequisites
 
