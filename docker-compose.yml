@@ -1,0 +1,9 @@
+version: "3"
+services:
+  bulkvoikko:
+    build: bulkvoikko/
+    volumes:
+      - ./work:/opt/work:cached
+    tty: true
+    environment:
+      - LC_ALL=fi_FI.UTF-8
