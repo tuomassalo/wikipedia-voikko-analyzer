@@ -38,7 +38,7 @@ def extract_words(plaintext):
         ):
             if is_sentence_start:
                 # This word starts a sentence, so it's possibly a proper name.
-                yield (form, 'MAYBE_PROPER')
+                yield (form, 'MAYBE_PROPER', sentence)
             else:
                 # The word is considered a proper name if it:
                 # - has an uppercase letter followed by a lowercase letter ("Foo")
@@ -50,9 +50,9 @@ def extract_words(plaintext):
                     regex.search(r'\p{Ll}\p{Lu}', form) or
                     not regex.search(r'\p{Ll}', form)
                 ):
-                    yield (form, 'PROPER')
+                    yield (form, 'PROPER', sentence)
                 else:
-                    yield(form, 'NOT_PROPER')
+                    yield(form, 'NOT_PROPER', sentence)
             is_sentence_start = False
 
 

@@ -9,7 +9,7 @@ for (page_id, occurrences) in get_split_articles():
     # count the number of occurrence in this article
     word_occurrence = dict()
 
-    for (word, properness) in occurrences:
+    for (word, properness, sentence) in occurrences:
         if(len(word) >= 5):
             analysis = analyze_word(word)
             if(len(analysis) == 0):
